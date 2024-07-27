@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>REMISIÓN</title>
-		<link rel="stylesheet" href="https://fredyortegon30.github.io/invoice/style.css">
+		<link rel="stylesheet" href="https://https://gerardo-spe.github.io/invoice/style.css">
 		<link rel="license" href="https://www.opensource.org/licenses/mit-license/">
 	</head>
 	<body>
@@ -53,13 +53,14 @@
 					</tr>
 				</thead>
 				<tbody>
-				<p><span>&lt;&lt;Start: SELECT(DETALLE_VENTAS[id_detalle],[id_encabezado_venta]=[id_encabezado]) &gt;&gt;</span></p>
-					<tr>
-						<td><a class="cut">-</a>&lt;&lt;[id_Producto].[Nombre de producto]&gt;&gt;</td>
-						<td><span></span></td>
-				        <td><span>&lt;&lt;[Valor_unitario]&gt;&gt;</span></td>
-						<td><span>&lt;&lt;[Cantidad]&gt;&gt;</span></td>
-						<td><span>&lt;&lt;[Subtotal]&gt;&gt;</span></td>
+                                <p><span>&lt;&lt;<<START:ORDERBY(FILTER(“Facturas”,[RFC]=[_THISROW].[RFC]),[Factura])>><<[Factura]>></span></p>
+					
+				        <tr>
+						<td><span>&lt;&lt;[Factura]&gt;&gt;</span></td>
+						 <td><span>&lt;&lt;[Fecha]&gt;&gt;</span></td>
+						<td><span>&lt;&lt;[Importe]&gt;&gt;</span></td>
+						<td><span>&lt;&lt;[Forma de Pago]&gt;&gt;</span></td>
+						<td><span>&lt;&lt;[Uso CFDI]&gt;&gt;</span></td>
 					</tr>
 				<p><span>&lt;&lt; end &gt;&gt;</span></p>
 				</tbody>
@@ -68,16 +69,9 @@
 			<table class="balance">
 				<tr>
 					<th><span>Total</span></th>
-					<td><span>&lt;&lt;[TOTAL VENTA]&gt;&gt;</span></td>
+					<td><span>&lt;&lt;[TOTALNET]&gt;&gt;</span></td>
 				</tr>
-				<tr>
-					<th><span>Otros conceptos</span></th>
-					<td><span data-prefix="$"></span><span>0.00</span></td>
-				</tr>
-				<tr>
-					<th><span>Total a pagar</span></th>
-					<td><span>&lt;&lt;[TOTAL VENTA]&gt;&gt;</span></td>
-				</tr>
+				
 			</table>
 		</article>
 		<aside>
